@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://nathanmahnke.github.io/sitemap.xml
