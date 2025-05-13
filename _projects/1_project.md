@@ -13,7 +13,7 @@ The code below shows the handling of a csv file containing emails and their clas
 
     {% raw %}
 
-    ```python
+    ```Python3
     # Read the CSV file
     with open("spam_ham_dataset.csv", "r", encoding='ISO-8859-1') as file:
         reader = csv.reader(file)
@@ -47,7 +47,7 @@ Once the data has been pre-processed, it can be handed to the newly created mode
 
     {% raw %}
 
-    ```python
+    ```py
     # Load data from files
     def load_data(directory):
         texts = []
@@ -72,7 +72,7 @@ Those arraylists that have just been created are then then shuffled. This helps 
 
     {% raw %}
 
-    ```python
+    ```Py
     # Concatenate and shuffle the data
     all_texts = ham_texts + spam_texts
     all_labels = ham_labels + spam_labels
@@ -85,13 +85,12 @@ Those arraylists that have just been created are then then shuffled. This helps 
 
 The data is split:
 
-    - 80% will be used to teach the model (training set).
-
-     - 20% will be used to check how well it learned (test set).
+    80% will be used to teach the model (training set).
+    20% will be used to check how well it learned (test set).
 
     {% raw %}
 
-    ```python
+    ```Python
     # Split the data into train and test sets
     train_texts, test_texts, train_labels, test_labels = train_test_split(all_texts, all_labels, test_size=0.2, random_state=42)
     ```
@@ -100,9 +99,9 @@ The data is split:
 
 Neural networks can’t understand plain text, so:
 
-    - The tokenizer breaks each email into individual words.
-    - Each word is assigned a number.
-    - Emails are turned into lists of those numbers.
+- The tokenizer breaks each email into individual words.
+- Each word is assigned a number.
+- Emails are turned into lists of those numbers.
 
 For the emails in their tokenized form to be useful, they all need to be the same size. So, they are padded to match the size of the largest email.
     {% raw %}
@@ -120,6 +119,23 @@ For the emails in their tokenized form to be useful, they all need to be the sam
     test_data = pad_sequences(test_sequences, maxlen=max_sequence_length)
     ```
     
+    {% endraw %}
+
+Now that the dataset has been fully processed and is ready for use, the model needs to be created. 
+The model used in this project is a recurrent neural network that:
+
+    - Turns word numbers into dense word "meanings" (Embedding layer).
+    - Learns patterns in word sequences (LSTM layer).
+    - Prevents overfitting by randomly "turning off" parts of the network during training (Dropout).
+    - Outputs a single number between 0 and 1 (Dense layer with sigmoid) to classify emails as spam or ham.
+
+
+    {% raw %}
+
+    ```python
+    
+    ```
+
     {% endraw %}
 
 
