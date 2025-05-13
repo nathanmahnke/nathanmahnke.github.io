@@ -1,48 +1,56 @@
 ---
 layout: page
-title: project 1
-description: with background image
+title: MailGuard
+description: Email Classification Recurrent Neural Network
 img: assets/img/12.jpg
 importance: 1
 category: work
 related_publications: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
-
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+MailGuard was designed to classify a given email as spam (illegitimate) or ham (legitimate). Before it can do so, it needs a large dataset on which to train. 
+The code below shows the handling of a csv file containing emails and their classification as either spam or ham. It separates the emails into their respective folders for use in training.
 
     ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
+    # Read the CSV file
+    with open("spam_ham_dataset.csv", "r", encoding='ISO-8859-1') as file:
+        reader = csv.reader(file)
+        next(reader)  # Skip the header row if it exists
+
+        # Process each row in the CSV file
+        for index, row in enumerate(reader, 1):
+            try:
+                content, label = row[:2]  # Extract only the first two values
+            except ValueError:
+                print(f"Invalid row {index} with values: {row}")
+                continue
+            # Determine the directory based on the label
+            if label == "0":
+                directory = "Ham"
+            elif label == "1":
+                directory = "Spam"
+            else:
+                print(f"Invalid label in row {index}: {label}")
+                continue
+
+            # Create the file in the corresponding directory
+            filename = os.path.join(directory, f"{index}.txt")
+            with open(filename, "w") as output_file:
+                output_file.write(content)
     ---
 
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    <div class="col-sm mt-2 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/ModelAccuracyGraph.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    <div class="col-sm mt-2 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/ModelLossGraph.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
+    The above graphs depict the model's accuracy and loss during each epoch.
 </div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+
 
 You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
 Say you wanted to write a bit about your project before you posted the rest of the images.
