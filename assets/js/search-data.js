@@ -473,7 +473,7 @@ ninja.data = [{
         title: 'LinkedIn',
         section: 'Socials',
         handler: () => {
-          window.open("https://www.linkedin.com/in/Nathan Mahnke", "_blank");
+          window.open("https://www.linkedin.com/in/nathan-mahnke-515b64229", "_blank");
         },
       },{
       id: 'light-theme',
