@@ -10,8 +10,8 @@ related_publications: true
 
 MailGuard was designed to classify a given email as spam (illegitimate) or ham (legitimate). Before it can do so, it needs a large dataset on which to train. 
 The code below shows the handling of a csv file containing emails and their classification as either spam or ham. It separates the emails into their respective folders for use in training.
-
-    ```Python3
+    <code>
+    ```python
     # Read the CSV file
     with open("spam_ham_dataset.csv", "r", encoding='ISO-8859-1') as file:
         reader = csv.reader(file)
@@ -38,7 +38,7 @@ The code below shows the handling of a csv file containing emails and their clas
             with open(filename, "w") as output_file:
                 output_file.write(content)
     ```
-
+    </code>
 Once the data has been pre-processed, it can be handed to the newly created model for training. But first, the data needs to be loaded into respective array objects. A function is defined for this process and then called on each of the types of email.
 
     ```py
