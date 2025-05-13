@@ -11,8 +11,6 @@ related_publications: true
 MailGuard was designed to classify a given email as spam (illegitimate) or ham (legitimate). Before it can do so, it needs a large dataset on which to train. 
 The code below shows the handling of a csv file containing emails and their classification as either spam or ham. It separates the emails into their respective folders for use in training.
 
-    {% raw %}
-
     ```Python3
     # Read the CSV file
     with open("spam_ham_dataset.csv", "r", encoding='ISO-8859-1') as file:
@@ -41,11 +39,7 @@ The code below shows the handling of a csv file containing emails and their clas
                 output_file.write(content)
     ```
 
-    {% endraw %}
-
 Once the data has been pre-processed, it can be handed to the newly created model for training. But first, the data needs to be loaded into respective array objects. A function is defined for this process and then called on each of the types of email.
-
-    {% raw %}
 
     ```py
     # Load data from files
@@ -66,11 +60,7 @@ Once the data has been pre-processed, it can be handed to the newly created mode
     spam_texts, spam_labels = load_data('Spam')
     ```
 
-    {% endraw %}
-
 Those arraylists that have just been created are then then shuffled. This helps prevent the model from learning patterns based on the order of the data (e.g., all ham first, then all spam).
-
-    {% raw %}
 
     ```Py
     # Concatenate and shuffle the data
@@ -81,21 +71,19 @@ Those arraylists that have just been created are then then shuffled. This helps 
     all_texts, all_labels = zip(*data)
     ```
 
-    {% endraw %}
-
 The data is split:
 
-    80% will be used to teach the model (training set).
-    20% will be used to check how well it learned (test set).
+- 80% will be used to teach the model (training set).
+- 20% will be used to check how well it learned (test set).
 
-    {% raw %}
+
 
     ```Python
     # Split the data into train and test sets
     train_texts, test_texts, train_labels, test_labels = train_test_split(all_texts, all_labels, test_size=0.2, random_state=42)
     ```
 
-    {% endraw %}
+
 
 Neural networks can’t understand plain text, so:
 
@@ -104,7 +92,6 @@ Neural networks can’t understand plain text, so:
 - Emails are turned into lists of those numbers.
 
 For the emails in their tokenized form to be useful, they all need to be the same size. So, they are padded to match the size of the largest email.
-    {% raw %}
 
     ```python
     # Tokenize the texts and convert them to sequences
@@ -119,24 +106,45 @@ For the emails in their tokenized form to be useful, they all need to be the sam
     test_data = pad_sequences(test_sequences, maxlen=max_sequence_length)
     ```
     
-    {% endraw %}
 
 Now that the dataset has been fully processed and is ready for use, the model needs to be created. 
 The model used in this project is a recurrent neural network that:
 
-    - Turns word numbers into dense word "meanings" (Embedding layer).
-    - Learns patterns in word sequences (LSTM layer).
-    - Prevents overfitting by randomly "turning off" parts of the network during training (Dropout).
-    - Outputs a single number between 0 and 1 (Dense layer with sigmoid) to classify emails as spam or ham.
+- Turns word numbers into dense word "meanings" (Embedding layer).
+- Learns patterns in word sequences (LSTM layer).
+- Prevents overfitting by randomly "turning off" parts of the network during training (Dropout).
+- Outputs a single number between 0 and 1 (Dense layer with sigmoid) to classify emails as spam or ham.
 
 
     {% raw %}
 
-    ```python
+    ```
+    # Tokenize the texts and convert them to sequences
+    tokenizer = Tokenizer()
+    tokenizer.fit_on_texts(train_texts)
+    train_sequences = tokenizer.texts_to_sequences(train_texts)
+    test_sequences = tokenizer.texts_to_sequences(test_texts)
     
+    # Pad the sequences to have the same length
+    max_sequence_length = max([len(sequence) for sequence in train_sequences + test_sequences])
+    train_data = pad_sequences(train_sequences, maxlen=max_sequence_length)
+    test_data = pad_sequences(test_sequences, maxlen=max_sequence_length)
     ```
 
     {% endraw %}
+
+    ```
+    # Tokenize the texts and convert them to sequences
+    tokenizer = Tokenizer()
+    tokenizer.fit_on_texts(train_texts)
+    train_sequences = tokenizer.texts_to_sequences(train_texts)
+    test_sequences = tokenizer.texts_to_sequences(test_texts)
+    
+    # Pad the sequences to have the same length
+    max_sequence_length = max([len(sequence) for sequence in train_sequences + test_sequences])
+    train_data = pad_sequences(train_sequences, maxlen=max_sequence_length)
+    test_data = pad_sequences(test_sequences, maxlen=max_sequence_length)
+    ```
 
 
 
