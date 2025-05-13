@@ -39,81 +39,47 @@ with open("spam_ham_dataset.csv", "r", encoding='ISO-8859-1') as file:
             output_file.write(content)
 ```
 
-
-    <pre><code>
-    ```python
-    # Read the CSV file
-    with open("spam_ham_dataset.csv", "r", encoding='ISO-8859-1') as file:
-        reader = csv.reader(file)
-        next(reader)  # Skip the header row if it exists
-
-        # Process each row in the CSV file
-        for index, row in enumerate(reader, 1):
-            try:
-                content, label = row[:2]  # Extract only the first two values
-            except ValueError:
-                print(f"Invalid row {index} with values: {row}")
-                continue
-            # Determine the directory based on the label
-            if label == "0":
-                directory = "Ham"
-            elif label == "1":
-                directory = "Spam"
-            else:
-                print(f"Invalid label in row {index}: {label}")
-                continue
-
-            # Create the file in the corresponding directory
-            filename = os.path.join(directory, f"{index}.txt")
-            with open(filename, "w") as output_file:
-                output_file.write(content)
-    ```
-    </code></pre>
 Once the data has been pre-processed, it can be handed to the newly created model for training. But first, the data needs to be loaded into respective array objects. A function is defined for this process and then called on each of the types of email.
 
-    ```py
-    # Load data from files
-    def load_data(directory):
-        texts = []
-        labels = []
-        for filename in os.listdir(directory):
-            if not filename.endswith(".txt"):
-                continue
-            with open(os.path.join(directory, filename), 'r', encoding='utf-8', errors='ignore') as file:
-                text = file.read()
-                texts.append(text)
-                labels.append(0 if directory.lower() == 'ham' else 1)  # 0 for Ham, 1 for Spam
-        return texts, labels
+```python
+# Load data from files
+def load_data(directory):
+    texts = []
+    labels = []
+    for filename in os.listdir(directory):
+        if not filename.endswith(".txt"):
+            continue
+        with open(os.path.join(directory, filename), 'r', encoding='utf-8', errors='ignore') as file:
+            text = file.read()
+            texts.append(text)
+            labels.append(0 if directory.lower() == 'ham' else 1)  # 0 for Ham, 1 for Spam
+    return texts, labels
 
-    # Load Ham and Spam data
-    ham_texts, ham_labels = load_data('Ham')
-    spam_texts, spam_labels = load_data('Spam')
-    ```
+# Load Ham and Spam data
+ham_texts, ham_labels = load_data('Ham')
+spam_texts, spam_labels = load_data('Spam')
+```
 
 Those arraylists that have just been created are then then shuffled. This helps prevent the model from learning patterns based on the order of the data (e.g., all ham first, then all spam).
 
-    ```Py
-    # Concatenate and shuffle the data
-    all_texts = ham_texts + spam_texts
-    all_labels = ham_labels + spam_labels
-    data = list(zip(all_texts, all_labels))
-    np.random.shuffle(data)
-    all_texts, all_labels = zip(*data)
-    ```
+```python
+# Concatenate and shuffle the data
+all_texts = ham_texts + spam_texts
+all_labels = ham_labels + spam_labels
+data = list(zip(all_texts, all_labels))
+np.random.shuffle(data)
+all_texts, all_labels = zip(*data)
+```
 
 The data is split:
 
 - 80% will be used to teach the model (training set).
 - 20% will be used to check how well it learned (test set).
 
-
-
-    ```Python
-    # Split the data into train and test sets
-    train_texts, test_texts, train_labels, test_labels = train_test_split(all_texts, all_labels, test_size=0.2, random_state=42)
-    ```
-
-
+```python
+# Split the data into train and test sets
+train_texts, test_texts, train_labels, test_labels = train_test_split(all_texts, all_labels, test_size=0.2, random_state=42)
+```
 
 Neural networks can’t understand plain text, so:
 
@@ -123,18 +89,18 @@ Neural networks can’t understand plain text, so:
 
 For the emails in their tokenized form to be useful, they all need to be the same size. So, they are padded to match the size of the largest email.
 
-    ```python
-    # Tokenize the texts and convert them to sequences
-    tokenizer = Tokenizer()
-    tokenizer.fit_on_texts(train_texts)
-    train_sequences = tokenizer.texts_to_sequences(train_texts)
-    test_sequences = tokenizer.texts_to_sequences(test_texts)
-    
-    # Pad the sequences to have the same length
-    max_sequence_length = max([len(sequence) for sequence in train_sequences + test_sequences])
-    train_data = pad_sequences(train_sequences, maxlen=max_sequence_length)
-    test_data = pad_sequences(test_sequences, maxlen=max_sequence_length)
-    ```
+```python
+# Tokenize the texts and convert them to sequences
+tokenizer = Tokenizer()
+tokenizer.fit_on_texts(train_texts)
+train_sequences = tokenizer.texts_to_sequences(train_texts)
+test_sequences = tokenizer.texts_to_sequences(test_texts)
+
+# Pad the sequences to have the same length
+max_sequence_length = max([len(sequence) for sequence in train_sequences + test_sequences])
+train_data = pad_sequences(train_sequences, maxlen=max_sequence_length)
+test_data = pad_sequences(test_sequences, maxlen=max_sequence_length)
+```
     
 
 Now that the dataset has been fully processed and is ready for use, the model needs to be created. 
@@ -145,36 +111,20 @@ The model used in this project is a recurrent neural network that:
 - Prevents overfitting by randomly "turning off" parts of the network during training (Dropout).
 - Outputs a single number between 0 and 1 (Dense layer with sigmoid) to classify emails as spam or ham.
 
+```python
+# Tokenize the texts and convert them to sequences
+tokenizer = Tokenizer()
+tokenizer.fit_on_texts(train_texts)
+train_sequences = tokenizer.texts_to_sequences(train_texts)
+test_sequences = tokenizer.texts_to_sequences(test_texts)
 
-    {% raw %}
+# Pad the sequences to have the same length
+max_sequence_length = max([len(sequence) for sequence in train_sequences + test_sequences])
+train_data = pad_sequences(train_sequences, maxlen=max_sequence_length)
+test_data = pad_sequences(test_sequences, maxlen=max_sequence_length)
+```
 
-    ```
-    # Tokenize the texts and convert them to sequences
-    tokenizer = Tokenizer()
-    tokenizer.fit_on_texts(train_texts)
-    train_sequences = tokenizer.texts_to_sequences(train_texts)
-    test_sequences = tokenizer.texts_to_sequences(test_texts)
-    
-    # Pad the sequences to have the same length
-    max_sequence_length = max([len(sequence) for sequence in train_sequences + test_sequences])
-    train_data = pad_sequences(train_sequences, maxlen=max_sequence_length)
-    test_data = pad_sequences(test_sequences, maxlen=max_sequence_length)
-    ```
 
-    {% endraw %}
-
-    ```
-    # Tokenize the texts and convert them to sequences
-    tokenizer = Tokenizer()
-    tokenizer.fit_on_texts(train_texts)
-    train_sequences = tokenizer.texts_to_sequences(train_texts)
-    test_sequences = tokenizer.texts_to_sequences(test_texts)
-    
-    # Pad the sequences to have the same length
-    max_sequence_length = max([len(sequence) for sequence in train_sequences + test_sequences])
-    train_data = pad_sequences(train_sequences, maxlen=max_sequence_length)
-    test_data = pad_sequences(test_sequences, maxlen=max_sequence_length)
-    ```
 
 
 
