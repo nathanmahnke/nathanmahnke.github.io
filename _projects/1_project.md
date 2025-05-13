@@ -11,7 +11,9 @@ related_publications: true
 MailGuard was designed to classify a given email as spam (illegitimate) or ham (legitimate). Before it can do so, it needs a large dataset on which to train. 
 The code below shows the handling of a csv file containing emails and their classification as either spam or ham. It separates the emails into their respective folders for use in training.
 
-    ---
+    {% raw %}
+
+    ```python
     # Read the CSV file
     with open("spam_ham_dataset.csv", "r", encoding='ISO-8859-1') as file:
         reader = csv.reader(file)
@@ -37,8 +39,98 @@ The code below shows the handling of a csv file containing emails and their clas
             filename = os.path.join(directory, f"{index}.txt")
             with open(filename, "w") as output_file:
                 output_file.write(content)
-    ---
+    ```
 
+    {% endraw %}
+
+Once the data has been pre-processed, it can be handed to the newly created model for training. But first, the data needs to be loaded into respective array objects. A function is defined for this process and then called on each of the types of email.
+
+    {% raw %}
+
+    ```python
+    # Load data from files
+    def load_data(directory):
+        texts = []
+        labels = []
+        for filename in os.listdir(directory):
+            if not filename.endswith(".txt"):
+                continue
+            with open(os.path.join(directory, filename), 'r', encoding='utf-8', errors='ignore') as file:
+                text = file.read()
+                texts.append(text)
+                labels.append(0 if directory.lower() == 'ham' else 1)  # 0 for Ham, 1 for Spam
+        return texts, labels
+
+    # Load Ham and Spam data
+    ham_texts, ham_labels = load_data('Ham')
+    spam_texts, spam_labels = load_data('Spam')
+    ```
+
+    {% endraw %}
+
+Those arraylists that have just been created are then then shuffled. This helps prevent the model from learning patterns based on the order of the data (e.g., all ham first, then all spam).
+
+    {% raw %}
+
+    ```python
+    # Concatenate and shuffle the data
+    all_texts = ham_texts + spam_texts
+    all_labels = ham_labels + spam_labels
+    data = list(zip(all_texts, all_labels))
+    np.random.shuffle(data)
+    all_texts, all_labels = zip(*data)
+    ```
+
+    {% endraw %}
+
+The data is split:
+
+    - 80% will be used to teach the model (training set).
+
+     - 20% will be used to check how well it learned (test set).
+
+    {% raw %}
+
+    ```python
+    # Split the data into train and test sets
+    train_texts, test_texts, train_labels, test_labels = train_test_split(all_texts, all_labels, test_size=0.2, random_state=42)
+    ```
+
+    {% endraw %}
+
+Neural networks can’t understand plain text, so:
+
+    - The tokenizer breaks each email into individual words.
+    - Each word is assigned a number.
+    - Emails are turned into lists of those numbers.
+
+For the emails in their tokenized form to be useful, they all need to be the same size. So, they are padded to match the size of the largest email.
+    {% raw %}
+
+    ```python
+    # Tokenize the texts and convert them to sequences
+    tokenizer = Tokenizer()
+    tokenizer.fit_on_texts(train_texts)
+    train_sequences = tokenizer.texts_to_sequences(train_texts)
+    test_sequences = tokenizer.texts_to_sequences(test_texts)
+    
+    # Pad the sequences to have the same length
+    max_sequence_length = max([len(sequence) for sequence in train_sequences + test_sequences])
+    train_data = pad_sequences(train_sequences, maxlen=max_sequence_length)
+    test_data = pad_sequences(test_sequences, maxlen=max_sequence_length)
+    ```
+    
+    {% endraw %}
+
+
+
+    {% raw %}
+
+    ```python
+    
+    ```
+
+    {% endraw %}
 <div class="row">
     <div class="col-sm mt-2 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/ModelAccuracyGraph.png" title="example image" class="img-fluid rounded z-depth-1" %}
@@ -51,10 +143,6 @@ The code below shows the handling of a csv file containing emails and their clas
     The above graphs depict the model's accuracy and loss during each epoch.
 </div>
 
-
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
