@@ -1,200 +1,219 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
-    "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "name": "Nathan Mahnke",
+    "label": "Full Stack Developer",
+    "picture": "https://example.com/photo.jpg",
+    "email": "nathanmahnke@proton.me",
+    "phone": "(253)-370-0851",
+    "website": "https://nathanmahnke.github.io/",
+    "summary": "A recent graduate from the University of Washington with one year of experience seeking employment in the Software Development field.",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+      "address": "",
+      "city": "Seattle",
+      "region": "WA",
+      "postalCode": "",
+      "countryCode": "US"
     },
     "profiles": [
       {
-        "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
+        "network": "LinkedIn",
+        "username": "nathanmahnke",
+        "url": "https://www.linkedin.com/in/nathan-mahnke-515b64229/"
+      },
+      {
+        "network": "Github",
+        "username": "nathanmahnke",
+        "url": "https://github.com/nathanmahnke/"
       }
-    ]
+    ],
+    "url": "https://nathanmahnke.github.io/"
   },
   "work": [
     {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity"]
-    }
-  ],
-  "volunteer": [
+      "name": "RMS Corporation",
+      "position": "Full Stack Developer",
+      "url": "https://www.rmscorp.com/",
+      "startDate": "2023-11-02",
+      "endDate": "2024-12-15",
+      "summary": "",
+      "highlights": [
+        "RMS Corporation provides cutting-edge technology solutions and services, focusing on inventory management software for hundreds of warehouses across America.",
+        "Designed and implemented automation solutions reducing manual workload by using AI predictions.",
+        "Developed a decision support tool in Excel using VBA to enhance inventory management.",
+        "Simplified device evaluation processes to enhance onboarding and reduce training time.",
+        "Mentored team members on proprietary processes and tools for enhanced team proficiency."
+      ],
+      "technologies": [
+        "AI",
+        "VBA",
+        "Excel",
+        "Full Stack Development",
+        "Web Development",
+        "Java",
+        "Javalin",
+        "Spring Boot"
+      ],
+      "_delete": false,
+      "location": "Kent, WA"
+    },
     {
-      "organization": "People's Climate March",
-      "location": "Zurich, Switzerland",
-      "position": "Lead Organizer",
-      "url": "https://example.com",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
+      "name": "Northwest Asset Management",
+      "position": "Client Material AI Integration and Redesign Consultant",
+      "url": "https://www.nwasset.com/",
+      "startDate": "2023-09-03",
+      "endDate": "2023-12-23",
+      "summary": "",
+      "highlights": [
+        "Northwest Asset Management is a financial services firm specializing in wealth management and client advisory services.",
+        "Redesigned annual meeting materials to align with corporate style and integrated AI voice for enhanced engagement.",
+        "Designed fillable PDF forms to replace annual emails, eliminating manual data entry.",
+        "Future-proofed PDFs for potential database integration."
+      ],
+      "technologies": [
+        "AI",
+        "PDF",
+        "Email",
+        "Databases"
+      ],
+      "_delete": false,
+      "location": "Remote"
     }
   ],
+  "volunteer": [],
   "education": [
     {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "location": "Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
-      "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
-      "score": "10",
-      "courses": ["Theory of Relativity"]
+      "institution": "University of Washington",
+      "area": "Computer Science and Systems",
+      "studyType": "Bachelor's",
+      "startDate": "2020-08",
+      "endDate": "2023-06",
+      "gpa": "",
+      "courses": [
+        "Algorithms",
+        "Artificial Intelligence",
+        "Database Design",
+        "Operating Systems",
+        "Software Engineering",
+        "Web Design"
+      ],
+      "score": "3.4",
+      "_delete": false
+    },
+    {
+      "institution": "Pierce College Puyallup",
+      "area": "Arts",
+      "studyType": "Associate",
+      "startDate": "2018-07",
+      "endDate": "2020-09",
+      "score": "3.5",
+      "courses": [
+        "Public Speaking",
+        "Mechanical Engineering",
+        "Statistics"
+      ]
     }
   ],
-  "awards": [
-    {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
-    }
-  ],
-  "certificates": [
-    {
-      "name": "Machine Learning",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-location-dot"
-    },
-    {
-      "name": "Quantum Computing",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-tag"
-    },
-    {
-      "name": "Quantum Information",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-envelope"
-    },
-    {
-      "name": "Quantum Cryptography",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-hashtag"
-    },
-    {
-      "name": "Quantum Communication",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-calendar"
-    },
-    {
-      "name": "Quantum Teleportation",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-clipboard-check"
-    }
-  ],
-  "publications": [
-    {
-      "name": "Zur Elektrody/namik bewegter Körper",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-06-30",
-      "url": "https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies",
-      "summary": "It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source."
-    },
-    {
-      "name": "Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-03-18",
-      "url": "https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt",
-      "summary": "In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921."
-    },
-    {
-      "name": "Die Grundlage der allgemeinen Relativitätstheorie",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1916-03-20",
-      "url": "https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie",
-      "summary": "The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914)."
-    }
-  ],
+  "awards": [],
+  "publications": [],
   "skills": [
     {
-      "name": "Physics",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
+      "name": "Web Development",
+      "level": "Intermediate",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
+        "HTML",
+        "CSS",
+        "RESTful APIs",
+        "Javalin",
+        "Spring Web Services"
+      ],
+      "_delete": false
+    },
+    {
+      "name": "Software Development",
+      "level": "Intermediate",
+      "keywords": [
+        "Python",
+        "Java",
+        "C/C#/C++"
+      ]
+    },
+    {
+      "name": "Database Management",
+      "level": "Intermediate",
+      "keywords": [
+        "Spring Boot",
+        "SQL",
+        "MySQL",
+        "JDBC"
       ]
     }
   ],
   "languages": [
     {
-      "language": "German",
-      "fluency": "Native speaker",
-      "icon": ""
-    },
-    {
       "language": "English",
-      "fluency": "Fluent",
-      "icon": ""
+      "fluency": "Native speaker"
     }
   ],
-  "interests": [
-    {
-      "name": "Physics",
-      "icon": "fa-solid fa-tag",
-      "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
-      ]
-    }
-  ],
-  "references": [
-    {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-laptop",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
-    },
-    {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-thumbtack",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
-    }
-  ],
+  "interests": [],
+  "references": [],
   "projects": [
     {
-      "name": "Quantum Computing",
-      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
-      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
-      "startDate": "2018-01-01",
-      "endDate": "2018-01-01",
-      "url": "https://example.com"
+      "name": "MailGuard",
+      "description": "Email Classification Recurrent Neural Network",
+      "highlights": [
+        "Produced code to handle data sanitization and indexing, model creation and training, as well as model                             testing and improvements, all of which can be found here: https://colab.research.google.com/drive/1UrVu5VIYgHIzJpsrfWlVL3z2nK-nLt93?usp=sharing",
+        "Wrote and designed a Google Site as a formal paper discussing the technical aspects of the model and its evolution.",
+        "Performed a ten minute oral presentation on the major aspects of MailGuard, such as its viability in the current market"
+      ],
+      "keywords": [],
+      "startDate": "",
+      "endDate": "",
+      "url": "https://colab.research.google.com/drive/1UrVu5VIYgHIzJpsrfWlVL3z2nK-nLt93?usp=sharing",
+      "roles": []
+    },
+    {
+      "name": "Database GUI ",
+      "description": "GUI written in C# to interact with SQL Server",
+      "highlights": [
+        "Developed a program to open a connection with a SQL Server instance containing a Server with tables regarding a baseball league",
+        "Further evolved this program to act as GUI which shows the content of tables and allows for the deletion and insertion of new entries (note that the deletion used cascading deletion which, if made into a product for the market, would need to be changed immediately)",
+        "All code for this project can be found here: https://github.com/nathanmahnke/DatabaseGUIMahnke"
+      ],
+      "keywords": [],
+      "startDate": "",
+      "endDate": "",
+      "url": "https://github.com/nathanmahnke/DatabaseGUIMahnke",
+      "roles": []
+    },
+    {
+      "name": "Lavaboy and Icegirl",
+      "description": "Fireboy and Watergirl remake using JavaScript",
+      "highlights": [
+        "Designed and implemented game mechanics and levels from the classic flash game Fireboy and Watergirl using JavaScript",
+        "Worked as part of a team with a fellow classmate, Phillip, to decompile the original game and reuse assets",
+        "Hosted this remake using Github Pages: https://philtki.github.io/Lavaboy-and-Icegirl/"
+      ],
+      "keywords": [],
+      "startDate": "",
+      "endDate": "",
+      "url": "https://philtki.github.io/Lavaboy-and-Icegirl/",
+      "roles": []
+    },
+    {
+      "name": "Dungeon Adventure",
+      "description": "Completely original dungeon adventure game made using Java",
+      "highlights": [
+        "Designed algorithms for room generation using 2D arrays",
+        "Developed GUI systems to interpret 2D arrays and display corresponding game assets",
+        "Developed mechanics to allow players to interact with the world",
+        "Worked in collaboration with another student, Colton, who created the combat system",
+        "Github can be found: https://github.com/Nathan9819/TCSS360_Dungeon_Adventure_Group_Project"
+      ],
+      "keywords": [],
+      "startDate": "",
+      "endDate": "",
+      "url": "https://github.com/Nathan9819/TCSS360_Dungeon_Adventure_Group_Project",
+      "roles": []
     }
   ]
 }
