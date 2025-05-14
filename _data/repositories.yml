@@ -1,14 +1,11 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - nathanmahnke
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - philtki/Lavaboy-and-Icegirl
+  - nathanmahnke/DatabaseGUIMahnke
+  - nathanmahnke/nathanmahnke.github.io
+  - Nathan9819/AnimationAssignment
+  - Nathan9819/TCSS360_Dungeon_Adventure_Group_Project
