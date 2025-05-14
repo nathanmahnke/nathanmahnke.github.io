@@ -4,7 +4,7 @@ title: MailGuard
 description: Email Classification Recurrent Neural Network
 img: assets/img/12.jpg
 importance: 1
-category: work
+category: Professional
 related_publications: true
 ---
 

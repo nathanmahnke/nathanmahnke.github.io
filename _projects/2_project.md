@@ -1,11 +1,11 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
+title: Lavaboy and Icegirl
+description: Fireboy and Watergirl remake using JavaScript
 img: assets/img/3.jpg
 importance: 2
-category: work
-giscus_comments: true
+category: Professional
+giscus_comments: false
 ---
 
 Every project has a beautiful feature showcase page.
