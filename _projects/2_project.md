@@ -26,7 +26,7 @@ To give your project a background in the portfolio page, just add the img tag to
         {% include figure.liquid loading="eager" path="assets/img/FireBoyandWaterGirlMainScreen.png" title="title screen" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-2 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/FireBoyandWaterGirlLevelOne" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/FireBoyandWaterGirlLevelOne.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
