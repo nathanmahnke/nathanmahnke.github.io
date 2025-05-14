@@ -1,20 +1,10 @@
 ---
-layout: about
+layout: page
 title: Demos
-permalink: /demos
-subtitle: Full Stack Developer
-
-selected_papers: false # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
-
-announcements:
-  enabled: false # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
-
-latest_posts:
-  enabled: false
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+permalink: /demos/
+description: A handy place to try out my demos
+subtitle: A handy place to try out my demos
+nav: true
 ---
+This is a test
 <iframe src="https://philtki.github.io/Lavaboy-and-Icegirl/"></iframe>
