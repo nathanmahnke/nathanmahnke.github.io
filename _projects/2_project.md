@@ -2,7 +2,7 @@
 layout: page
 title: Lavaboy and Icegirl
 description: Fireboy and Watergirl remake using JavaScript
-img: assets/img/3.jpg
+img: assets/img/FireBoyandWaterGirlMainScreen.png
 importance: 2
 category: Professional
 giscus_comments: false
