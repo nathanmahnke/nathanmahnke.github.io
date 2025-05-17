@@ -2,13 +2,14 @@
 layout: page
 title: MailGuard
 description: Email Classification Recurrent Neural Network
-img: assets/img/12.jpg
+img: assets/img/MailGuard.jpg
 importance: 1
-category: Professional
+category: Personal
 related_publications: true
 ---
+The original MailGuard was only designed to show an ability to generate a model, not to generate a working model. For this reason, MailGuard has been remastered for its publication here.
 
-MailGuard was designed to classify a given email as spam (illegitimate) or ham (legitimate). Training a model contains many steps, which I'll outline below.
+MailGuard was designed to classify a given email as spam (illegitimate) or ham (legitimate). Training a model contains many steps, which I'll outline below. 
 
 Firstly, there's data to worry about. A model is useless without valuable data. This model begins with a CSV (Comma separated Values) file that contains roughly six thousand emails. Of those emails, about 80% are considered spam while only 20% is legitimate. Balancing this inequity in the training data between ham and spam, will take some work later. For now, the data needs to be parsed into something easier for the model to understand. 
 
@@ -25,10 +26,13 @@ The computer "sees":
 This is taken a step further when the punction, numeric characters, and stopwords are removed. Stopwords may seem like an unfamiliar concept, but most people find themselves using them without knowing. Stopwords are words like, "the, is, at, and, was, she, he, etc." which help to form proper sentences when speaking or writing but don't carry much meaning on their own.
 Let's take the sentence:
 > "She is running to the park every morning."
+>
 If stopwords are removed(she, is, to, the, every), the result is:
 > "running park morning"
+>
 That still conveys the main idea:
 > Someone is running to a park in the morning.
+>
 
 
 While this makes the input data less human-readable, the preparation vastly increase the power of the model to identify key actions and subjects without being distracted by "filler". 
