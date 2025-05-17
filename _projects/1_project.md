@@ -5,7 +5,6 @@ description: Email Classification Recurrent Neural Network
 img: assets/img/MailGuard.jpg
 importance: 1
 category: Personal
-related_publications: true
 ---
 The original MailGuard was only designed to show an ability to generate a model, not to generate a working model. For this reason, MailGuard has been remastered for its publication here.
 
