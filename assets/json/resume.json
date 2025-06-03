@@ -29,6 +29,32 @@
   },
   "work": [
     {
+      "name": "M2 Advisory And B/D Consulting",
+      "position": "Client Material AI Integration and Redesign Consultant",
+      "startDate": "2025-01-13",
+      "summary": "",
+      "highlights": [
+        "Designed and implemented RESTful APIs using Java/Spring Boot, improving data access efficiency by 30%.",
+        "Developed and maintained scalable microservices architecture using Docker and Kubernetes.",
+        "Optimized SQL and NoSQL database queries, reducing response times by up to 40%.",
+        "Wrote comprehensive unit and integration tests using JUnit and Mockito, achieving 90% test coverage."
+      ],
+      "technologies": [
+        "REST",
+        "Java",
+        "Spring Boot",
+        "Databases",
+        "SQL",
+        "NoSQL",
+        "JUnit",
+        "Mockito",
+        "Docker",
+        "Kubernetes"
+      ],
+      "_delete": false,
+      "location": "Remote"
+    },
+    {
       "name": "RMS Corporation",
       "position": "Full Stack Developer",
       "url": "https://www.rmscorp.com/",
@@ -56,9 +82,8 @@
       "location": "Kent, WA"
     },
     {
-      "name": " M2 Advisory And B/D Consulting",
+      "name": "M2 Advisory And B/D Consulting",
       "position": "Client Material AI Integration and Redesign Consultant",
-      "url": "https://www.example.com/",
       "startDate": "2023-09-03",
       "endDate": "2023-12-23",
       "summary": "",

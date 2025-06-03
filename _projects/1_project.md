@@ -270,3 +270,17 @@ predictions = (predictions > 0.5).astype(int)  # Convert probabilities to binary
 # Print a classification report (precision, recall, f1-score)
 print(classification_report(test_labels, predictions))
 ```
+
+Finally, with the model created, it can be used to test the validity of emails.
+
+<div class="row">
+    <div class="col-sm mt-2 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/HamTest.png" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col-sm mt-2 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/SpamTest.png" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    On the left, the model is given a legitimate email and, on the right, it's given an obvious piece of spam. From the predictions, it can be seen that the model is accurately predicting the legitimacy of these test emails.
+</div>
