@@ -5,7 +5,7 @@
     "email": "nathanmahnke@proton.me",
     "phone": "(253)-370-0851",
     "website": "https://nathanmahnke.github.io/",
-    "summary": "A recent graduate from the University of Washington with one year of experience seeking employment in the Software Development field.",
+    "summary": "Throughout my short career, I have had experience with Java, C++, and Python mainly. I’ve developed full stack applications using RESTful APIs, Javalin, and SQL. I love working with small teams and strong leadership. I enjoy instant feedback and reinforcement. I work well with constructive criticism and can handle workplace disagreements without undue stress. I’ve worked in-person, hybrid, and remotely and have excelled during all three. My preference would lean towards hybrid and remote just to avoid a commute, but if I lived close to the office, I’d have no problem with in-person.",
     "location": {
       "address": "",
       "city": "Seattle",
@@ -34,10 +34,10 @@
       "startDate": "2025-01-13",
       "summary": "",
       "highlights": [
-        "Designed and implemented RESTful APIs using Java/Spring Boot, improving data access efficiency by 30%.",
-        "Developed and maintained scalable microservices architecture using Docker and Kubernetes.",
-        "Optimized SQL and NoSQL database queries, reducing response times by up to 40%.",
-        "Wrote comprehensive unit and integration tests using JUnit and Mockito, achieving 90% test coverage."
+        "Designed and implemented RESTful APIs using both Javalin and Springboot",
+        "Worked within a small team, communicated directly to owner/operator of company",
+        "Handled database integration and refactoring to reach high efficiency",
+        "Optimized database queries to reduce query execution time"
       ],
       "technologies": [
         "REST",
@@ -62,11 +62,11 @@
       "endDate": "2024-12-15",
       "summary": "",
       "highlights": [
-        "RMS Corporation provides cutting-edge technology solutions and services, focusing on inventory management software for hundreds of warehouses across America.",
-        "Designed and implemented automation solutions reducing manual workload by using AI predictions.",
-        "Developed a decision support tool in Excel using VBA to enhance inventory management.",
-        "Simplified device evaluation processes to enhance onboarding and reduce training time.",
-        "Mentored team members on proprietary processes and tools for enhanced team proficiency."
+        "Mentored new-hires in day-to-day operations",
+        "Worked autonomously without direct leadership observation or intervention",
+        "Implemented endpoints for web-based operations and database interactions",
+        "Maintained an existing codebase by refactoring inefficient code and handling reported bugs",
+        "Developed GUIs using html, css, and javascript"
       ],
       "technologies": [
         "AI",
@@ -88,10 +88,10 @@
       "endDate": "2023-12-23",
       "summary": "",
       "highlights": [
-        "M2 Advisory And B/D Consulting is a financial services firm specializing in wealth management and client advisory services.",
-        "Redesigned annual meeting materials to align with corporate style and integrated AI voice for enhanced engagement.",
-        "Designed fillable PDF forms to replace annual emails, eliminating manual data entry.",
-        "Future-proofed PDFs for potential database integration."
+        "Redesigned a corporate annual meeting to be more in line with the companies new brand image",
+        "Implemented a feature to stop the meeting’s attendants from skipping the meeting’s powerpoint",
+        "Reformatted an annual PDF to be fillable, removing the need for employees to manually enter data from response emails",
+        "Added database integration to the fillable PDF to store the answers returned by clients"
       ],
       "technologies": [
         "AI",
